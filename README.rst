@@ -16,7 +16,8 @@ Using ``pip``::
     $ [sudo] pip install sftpserver
 
 
-Examples:
+Examples
+--------
 
 ::
 
