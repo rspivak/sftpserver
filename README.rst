@@ -1,7 +1,7 @@
 sftpserver
 ==========
 
-``ftpserver`` is a simple single-threaded SFTP server based on
+``sftpserver`` is a simple single-threaded SFTP server based on
 Paramiko's SFTPServer.
 
 I needed a simple server that could be used as a stub for testing
