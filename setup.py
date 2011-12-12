@@ -17,7 +17,7 @@ def read(*rel_names):
 
 setup(
     name='sftpserver',
-    version='0.1',
+    version='0.2',
     url='http://github.com/rspivak/sftpserver',
     license='MIT',
     description='sftpserver - a simple single-threaded sftp server',
