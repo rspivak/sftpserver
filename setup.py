@@ -20,7 +20,7 @@ setup(
     version='0.1',
     url='http://github.com/rspivak/sftpserver',
     license='MIT',
-    description='sftpserver - single-threaded sftp server',
+    description='sftpserver - a simple single-threaded sftp server',
     author='Ruslan Spivak',
     author_email='ruslan.spivak@gmail.com',
     packages=find_packages('src'),
