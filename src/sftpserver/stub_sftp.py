@@ -29,7 +29,11 @@ class StubServer (ServerInterface):
     def check_auth_password(self, username, password):
         # all are allowed
         return AUTH_SUCCESSFUL
-
+        
+    def check_auth_publickey(self, username, key):
+        # all are allowed
+        return AUTH_SUCCESSFUL
+        
     def check_channel_request(self, kind, chanid):
         return OPEN_SUCCEEDED
 
