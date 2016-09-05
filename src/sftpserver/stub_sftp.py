@@ -37,6 +37,10 @@ class StubServer (ServerInterface):
     def check_channel_request(self, kind, chanid):
         return OPEN_SUCCEEDED
 
+    def get_allowed_auths(self, username):
+        """List availble auth mechanisms."""
+        return "password,publickey"
+
 
 class StubSFTPHandle (SFTPHandle):
     def stat(self):
