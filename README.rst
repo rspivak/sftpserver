@@ -38,9 +38,9 @@ Examples
     $ sftpserver -k /tmp/test_rsa.key -l DEBUG
 
 
-Generating a test private key:
+Generating a test private key::
 
-$ openssl req -out CSR.csr -new -newkey rsa:2048 -nodes -keyout /tmp/test_rsa.key
+    $ openssl req -out CSR.csr -new -newkey rsa:2048 -nodes -keyout /tmp/test_rsa.key
 
 Connecting with a Python client to our server:
 
