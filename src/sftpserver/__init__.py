@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# Copyright (c) 2011 Ruslan Spivak
+# Copyright (c) 2011-2017 Ruslan Spivak
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -26,7 +26,7 @@ __author__ = 'Ruslan Spivak <ruslan.spivak@gmail.com>'
 
 import time
 import socket
-import optparse
+import argparse
 import sys
 import textwrap
 
@@ -69,30 +69,31 @@ def main():
     usage: sftpserver [options]
     -k/--keyfile should be specified
     """
-    parser = optparse.OptionParser(usage=textwrap.dedent(usage))
-    parser.add_option(
+    parser = argparse.ArgumentParser(usage=textwrap.dedent(usage))
+    parser.add_argument(
         '--host', dest='host', default=HOST,
-        help='listen on HOST [default: %default]')
-    parser.add_option(
-        '-p', '--port', dest='port', type='int', default=PORT,
-        help='listen on PORT [default: %default]'
-        )
-    parser.add_option(
+        help='listen on HOST [default: %(default)s]'
+    )
+    parser.add_argument(
+        '-p', '--port', dest='port', type=int, default=PORT,
+        help='listen on PORT [default: %(default)d]'
+    )
+    parser.add_argument(
         '-l', '--level', dest='level', default='INFO',
-        help='Debug level: WARNING, INFO, DEBUG [default: %default]'
-        )
-    parser.add_option(
+        help='Debug level: WARNING, INFO, DEBUG [default: %(default)s]'
+    )
+    parser.add_argument(
         '-k', '--keyfile', dest='keyfile', metavar='FILE',
         help='Path to private key, for example /tmp/test_rsa.key'
-        )
+    )
 
-    options, args = parser.parse_args()
+    args = parser.parse_args()
 
-    if options.keyfile is None:
+    if args.keyfile is None:
         parser.print_help()
         sys.exit(-1)
 
-    start_server(options.host, options.port, options.keyfile, options.level)
+    start_server(args.host, args.port, args.keyfile, args.level)
 
 
 if __name__ == '__main__':
